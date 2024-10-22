@@ -1,5 +1,6 @@
 //
 //  ContractMethodHelper.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/17.
 //
@@ -7,8 +8,8 @@
 import Foundation
 
 import BigInt
-import WWCryptoKit
-import WWExtensions
+import SWCryptoKit
+import SWExtensions
 
 public enum ContractMethodHelper {
     // MARK: Nested Types
@@ -49,7 +50,7 @@ public enum ContractMethodHelper {
                 data += pad(data: argument.serialize())
 
             case let argument as String:
-                data += pad(data: argument.ww.hexData ?? Data())
+                data += pad(data: argument.sw.hexData ?? Data())
 
             case let argument as Address:
                 data += pad(data: argument.nonPrefixed)
@@ -139,7 +140,7 @@ public enum ContractMethodHelper {
     }
 
     private static func parseInt(data: Data) -> Int {
-        Data(data.reversed()).ww.to(type: Int.self)
+        Data(data.reversed()).sw.to(type: Int.self)
     }
 
     private static func parseAddresses(startPosition: Int, inputArguments: Data) throws -> [Address] {

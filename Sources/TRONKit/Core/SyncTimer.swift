@@ -1,5 +1,6 @@
 //
 //  SyncTimer.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/2.
 //
@@ -8,8 +9,8 @@ import Combine
 import Foundation
 
 import BigInt
-import WWExtensions
-import WWToolKit
+import SWExtensions
+import SWToolKit
 
 // MARK: - ISyncTimerDelegate
 

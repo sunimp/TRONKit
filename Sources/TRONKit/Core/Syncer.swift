@@ -1,12 +1,13 @@
 //
 //  Syncer.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/2.
 //
 
 import Foundation
 
-import WWExtensions
+import SWExtensions
 
 // MARK: - Syncer
 

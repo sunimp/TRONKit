@@ -1,5 +1,6 @@
 //
 //  FeeProvider.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/26.
 //
@@ -74,7 +75,7 @@ extension FeeProvider {
                     to: contract.contractAddress,
                     amount: contract.callValue.flatMap { BigUInt($0) },
                     gasPrice: 1,
-                    data: contract.data.ww.hexData!
+                    data: contract.data.sw.hexData!
                 )
             )
 

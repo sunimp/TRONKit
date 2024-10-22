@@ -1,5 +1,6 @@
 //
 //  Address.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/4/26.
 //
@@ -7,8 +8,8 @@
 import Foundation
 
 import GRDB
-import WWCryptoKit
-import WWExtensions
+import SWCryptoKit
+import SWExtensions
 
 // MARK: - Address
 
@@ -21,7 +22,7 @@ public struct Address {
     // MARK: Computed Properties
 
     public var hex: String {
-        raw.ww.hex
+        raw.sw.hex
     }
 
     public var nonPrefixed: Data {
@@ -41,7 +42,7 @@ public struct Address {
         self.raw = prefixedRaw
 
         let checksum = Crypto.doubleSha256(prefixedRaw).prefix(4)
-        base58 = Data(prefixedRaw + checksum).ww.encodeBase58
+        base58 = Data(prefixedRaw + checksum).sw.encodeBase58
     }
 
     public init(address: String) throws {

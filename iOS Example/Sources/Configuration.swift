@@ -7,7 +7,7 @@
 
 import UIKit
 
-import WWToolKit
+import SWToolKit
 import TRONKit
 
 class Configuration {

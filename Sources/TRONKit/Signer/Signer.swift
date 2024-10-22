@@ -1,5 +1,6 @@
 //
 //  Signer.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/4/26.
 //
@@ -8,8 +9,8 @@ import Foundation
 
 import BigInt
 import HDWalletKit
-import WWCryptoKit
-import WWToolKit
+import SWCryptoKit
+import SWToolKit
 
 // MARK: - Signer
 
@@ -46,7 +47,7 @@ extension Signer {
     }
 
     public static func privateKey(string: String) throws -> Data {
-        guard let data = string.ww.hexData else {
+        guard let data = string.sw.hexData else {
             throw PrivateKeyValidationError.invalidDataString
         }
 

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-import WWExtensions
+import SWExtensions
 import SnapKit
 import TRONKit
 

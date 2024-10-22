@@ -1,14 +1,15 @@
 //
 //  TRC20DataProvider.swift
+//  TRONKit
 //
-//  Created by Sun on 2023/6/9.
+//  Created by Sun on 2024/8/28.
 //
 
 import Foundation
 
 import BigInt
-import WWExtensions
-import WWToolKit
+import SWExtensions
+import SWToolKit
 
 // MARK: - TRC20DataProvider
 
@@ -96,7 +97,7 @@ public enum TRC20DataProvider {
             throw TokenError.invalidHex
         }
 
-        guard let bigIntValue = BigUInt(data.prefix(32).ww.hex, radix: 16) else {
+        guard let bigIntValue = BigUInt(data.prefix(32).sw.hex, radix: 16) else {
             throw TokenError.invalidHex
         }
 

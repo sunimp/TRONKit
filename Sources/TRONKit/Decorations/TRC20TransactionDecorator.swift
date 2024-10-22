@@ -1,7 +1,8 @@
 //
 //  TRC20TransactionDecorator.swift
+//  TRONKit
 //
-//  Created by Sun on 2023/5/17.
+//  Created by Sun on 2024/8/28.
 //
 
 import Foundation
@@ -33,7 +34,7 @@ extension TRC20TransactionDecorator: ITransactionDecorator {
         events: [Event]
     )
         -> TransactionDecoration? {
-        guard let contractMethod = factories.createMethod(input: contract.data.ww.hexData!) else {
+        guard let contractMethod = factories.createMethod(input: contract.data.sw.hexData!) else {
             return nil
         }
 

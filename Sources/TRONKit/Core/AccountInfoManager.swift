@@ -1,5 +1,6 @@
 //
 //  AccountInfoManager.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/2.
 //
@@ -8,7 +9,7 @@ import Combine
 import Foundation
 
 import BigInt
-import WWExtensions
+import SWExtensions
 
 // MARK: - AccountInfoManager
 

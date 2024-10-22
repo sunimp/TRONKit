@@ -1,5 +1,6 @@
 //
 //  Transforms.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/2.
 //
@@ -17,7 +18,7 @@ struct HexIntTransform: TransformType {
             return nil
         }
 
-        return Int(hexString.ww.stripHexPrefix(), radix: 16)
+        return Int(hexString.sw.stripHexPrefix(), radix: 16)
     }
 
     func transformToJSON(_: Int?) -> String? {
@@ -45,7 +46,7 @@ struct HexDataArrayTransform: TransformType {
             return nil
         }
 
-        return hexStrings.compactMap(\.ww.hexData)
+        return hexStrings.compactMap(\.sw.hexData)
     }
 
     func transformToJSON(_: [Data]?) -> String? {
@@ -61,7 +62,7 @@ struct HexDataTransform: TransformType {
             return nil
         }
 
-        return hexString.ww.hexData
+        return hexString.sw.hexData
     }
 
     func transformToJSON(_: Data?) -> String? {
@@ -73,7 +74,7 @@ struct HexDataTransform: TransformType {
 
 struct HexAddressTransform: TransformType {
     func transformFromJSON(_ value: Any?) -> Address? {
-        guard let hexString = value as? String, let hexData = hexString.ww.hexData else {
+        guard let hexString = value as? String, let hexData = hexString.sw.hexData else {
             return nil
         }
 
@@ -109,7 +110,7 @@ struct HexBigUIntTransform: TransformType {
             return nil
         }
 
-        return BigUInt(hexString.ww.stripHexPrefix(), radix: 16)
+        return BigUInt(hexString.sw.stripHexPrefix(), radix: 16)
     }
 
     func transformToJSON(_: BigUInt?) -> String? {

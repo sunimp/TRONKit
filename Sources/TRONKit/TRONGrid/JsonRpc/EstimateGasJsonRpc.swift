@@ -1,5 +1,6 @@
 //
 //  EstimateGasJsonRpc.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/6/2.
 //
@@ -11,18 +12,18 @@ import BigInt
 class EstimateGasJsonRpc: IntJsonRpc {
     init(from: Address, to: Address?, amount: BigUInt?, gasPrice: Int, data: Data?) {
         var params: [String: Any] = [
-            "from": from.raw.ww.hexString,
+            "from": from.raw.sw.hexString,
         ]
 
         if let to {
-            params["to"] = to.raw.ww.hexString
+            params["to"] = to.raw.sw.hexString
         }
         if let amount {
-            params["value"] = "0x" + (amount == 0 ? "0" : amount.serialize().ww.hex.ww.removeLeadingZeros())
+            params["value"] = "0x" + (amount == 0 ? "0" : amount.serialize().sw.hex.sw.removeLeadingZeros())
         }
-        params["gasPrice"] = "0x" + String(gasPrice, radix: 16).ww.removeLeadingZeros()
+        params["gasPrice"] = "0x" + String(gasPrice, radix: 16).sw.removeLeadingZeros()
         if let data {
-            params["data"] = data.ww.hexString
+            params["data"] = data.sw.hexString
         }
 
         super.init(

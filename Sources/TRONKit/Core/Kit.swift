@@ -1,5 +1,6 @@
 //
 //  Kit.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/4/26.
 //
@@ -9,8 +10,8 @@ import Foundation
 
 import BigInt
 import HDWalletKit
-import WWCryptoKit
-import WWToolKit
+import SWCryptoKit
+import SWToolKit
 
 // MARK: - Kit
 
@@ -132,8 +133,8 @@ extension Kit {
     )
         -> TriggerSmartContract {
         let transferMethod = TransferMethod(to: toAddress, value: amount)
-        let data = transferMethod.encodedABI().ww.hex
-        let parameter = ContractMethodHelper.encodedABI(methodID: Data(), arguments: transferMethod.arguments).ww.hex
+        let data = transferMethod.encodedABI().sw.hex
+        let parameter = ContractMethodHelper.encodedABI(methodID: Data(), arguments: transferMethod.arguments).sw.hex
 
         return TriggerSmartContract(
             data: data,

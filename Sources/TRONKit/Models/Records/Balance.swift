@@ -1,5 +1,6 @@
 //
 //  Balance.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/2.
 //
@@ -56,7 +57,13 @@ class Balance: Record {
 
 // MARK: - BigUInt + DatabaseValueConvertible
 
-extension BigUInt: DatabaseValueConvertible {
+#if compiler(>=6)
+extension BigUInt: @retroactive DatabaseValueConvertible { }
+#else
+extension BigUInt: DatabaseValueConvertible { }
+#endif
+
+extension BigUInt {
     public var databaseValue: DatabaseValue {
         description.databaseValue
     }

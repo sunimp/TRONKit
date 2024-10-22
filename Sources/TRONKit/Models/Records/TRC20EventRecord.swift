@@ -1,7 +1,8 @@
 //
 //  TRC20EventRecord.swift
+//  TRONKit
 //
-//  Created by Sun on 2023/5/17.
+//  Created by Sun on 2024/8/28.
 //
 
 import Foundation

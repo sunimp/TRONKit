@@ -1,5 +1,6 @@
 //
 //  SupportedContract.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/26.
 //
@@ -39,7 +40,7 @@ extension TriggerSmartContract: SupportedContract {
         var message = Protocol_TriggerSmartContract()
         message.ownerAddress = ownerAddress.raw
         message.contractAddress = contractAddress.raw
-        message.data = data.ww.hexData!
+        message.data = data.sw.hexData!
         message.callValue = Int64(callValue ?? 0)
         message.callTokenValue = Int64(callTokenValue ?? 0)
         message.tokenID = Int64(tokenID ?? 0)

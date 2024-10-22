@@ -1,5 +1,6 @@
 //
 //  UnknownTransactionDecoration.swift
+//  TRONKit
 //
 //  Created by Sun on 2023/5/17.
 //
@@ -26,7 +27,7 @@ open class UnknownTransactionDecoration: TransactionDecoration {
     init(contract: TriggerSmartContract?, internalTransactions: [InternalTransaction], events: [Event]) {
         fromAddress = contract?.ownerAddress
         toAddress = contract?.contractAddress
-        data = contract?.data.ww.hexData
+        data = contract?.data.sw.hexData
         value = contract?.callValue
         tokenValue = contract?.callTokenValue
         tokenID = contract?.tokenID

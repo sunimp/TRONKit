@@ -1,18 +1,19 @@
 //
 //  TRONGridProvider.swift
+//  TRONKit
 //
-//  Created by Sun on 2023/5/2.
+//  Created by Sun on 2024/8/28.
 //
 
 import Foundation
 
 import Alamofire
 import BigInt
-import WWToolKit
+@preconcurrency import SWToolKit
 
 // MARK: - TRONGridProvider
 
-class TRONGridProvider {
+class TRONGridProvider: @unchecked Sendable {
     // MARK: Properties
 
     private let networkManager: NetworkManager
@@ -323,7 +324,7 @@ extension TRONGridProvider {
     func broadcastTransaction(hexData: Data) async throws {
         let urlString = "\(baseURL)wallet/broadcasthex"
         let parameters: Parameters = [
-            "transaction": hexData.ww.hex,
+            "transaction": hexData.sw.hex,
         ]
 
         _ = try await networkManager.fetchJson(
